@@ -1,4 +1,6 @@
 import React from "react";
+import Todo from "../Components/Todo";
+import TodoForm from "../Components/TodoForm";
 class TodoListPage extends React.Component {
   state = {
     todos: [{ text: "Learn about React" }, { text: "Meet friend for lunch" }, { text: "Build really cool todo app" }],
@@ -25,20 +27,17 @@ class TodoListPage extends React.Component {
     return (
       <div className="todo-list">
         {this.state.todos.map((todo, index) => (
-          <div className="todo">{todo.text}</div>
+          <Todo todo={todo} />
         ))}
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            className="input"
-            value={this.state.newValue}
-            onChange={(e) =>
-              this.setState({
-                newValue: e.target.value,
-              })
-            }
-          />
-        </form>
+        <TodoForm
+          onSubmit={this.handleSubmit}
+          onValueChange={(value) =>
+            this.setState({
+              newValue: value,
+            })
+          }
+          value={this.state.newValue}
+        />
       </div>
     );
   }
