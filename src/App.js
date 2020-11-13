@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Counter from "./Components/Counter";
+import CounterHooks from "./Components/CounterHooks";
 
 class App extends React.Component {
   state = {
@@ -12,7 +12,7 @@ class App extends React.Component {
       <div className="App">
         <h1> Example of React LifeCycle</h1>
         <button onClick={() => this.setState({ showCounter: !this.state.showCounter })}>{this.state.showCounter ? "Hide Counter" : "Show Counter"}</button>
-        {this.state.showCounter && <Counter />}
+        {this.state.showCounter && <CounterHooks />}
       </div>
     );
   }
