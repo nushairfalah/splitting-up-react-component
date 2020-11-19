@@ -1,17 +1,10 @@
 import React from "react";
 class RegularComponent extends React.Component {
-  state = {
-    list: [],
-  };
-
-  componentDidMount() {
-    let newMockedList = [];
-    for (let index = 0; index < 1000; index++) {
-      newMockedList.push(index + 1);
+  delay() {
+    for (let i = 0; i < 800000000; i++) {
+      i++;
     }
-    this.setState({
-      list: newMockedList,
-    });
+    return "delayed text";
   }
 
   render() {
@@ -20,27 +13,7 @@ class RegularComponent extends React.Component {
       <div>
         Regular component {this.props.name}
         <br />
-        {this.state.list.map((el, index) => (
-          <div key={index}>
-            <div>
-              <div>
-                <div>
-                  <div>
-                    <div>
-                      <div>
-                        <div>
-                          <div>
-                            <div> {index + 1} Mock List</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+        <p>{this.delay()}</p>
       </div>
     );
   }
