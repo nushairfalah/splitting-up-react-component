@@ -1,19 +1,27 @@
 import React from "react";
 import "./App.css";
-import PureComponent from "./Components/PureComponent";
-import RegularComponent from "./Components/RegularComponent";
+/**
+ * TODO: Please import the `RegularComponent` and `PureComponent`
+ */
 class App extends React.Component {
-  state = {
-    name: "John",
-  };
+  /**
+   * TODO: Please add a state to this component, the key is `name` and the initial value is `John`
+   */
 
   render() {
-    console.log("*** Parent component render ****");
     return (
       <div className="App">
-        <button onClick={() => this.setState({ name: "John" })}>Update state</button>
-        <RegularComponent name={this.state.name} />
-        <PureComponent name={this.state.name} />
+        <button
+          onClick={() => {
+            // TODO: Please update the value of state `name` to `John`
+          }}
+        >
+          Update state
+        </button>
+
+        {/* 
+          TODO: Please attach the `RegularComponent` and `PureComponent` here
+        */}
       </div>
     );
   }
