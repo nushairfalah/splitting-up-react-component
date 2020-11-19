@@ -1,19 +1,19 @@
 import React from "react";
 import "./App.css";
-import CounterHooks from "./Components/CounterHooks";
-import CounterHooksClone from "./Components/CounterHooksClone";
-
+import PureComponent from "./Components/PureComponent";
+import RegularComponent from "./Components/RegularComponent";
 class App extends React.Component {
   state = {
-    showCounter: false,
+    name: "John",
   };
 
   render() {
+    console.log("*** Parent component render ****");
     return (
       <div className="App">
-        <h1> Example of React LifeCycle</h1>
-        <button onClick={() => this.setState({ showCounter: !this.state.showCounter })}>{this.state.showCounter ? "Hide Counter" : "Show Counter"}</button>
-        {this.state.showCounter && <CounterHooksClone />}
+        <button onClick={() => this.setState({ name: "John" })}>Update state</button>
+        <RegularComponent name={this.state.name} />
+        <PureComponent name={this.state.name} />
       </div>
     );
   }
