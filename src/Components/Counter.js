@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 // let timeout;
 // class Counter extends React.Component {
 //   state = {
@@ -43,7 +43,6 @@
 
 // export default Counter;
 
-import React from 'react';
 
 class Counter extends React.Component {
 
@@ -84,3 +83,4 @@ class Counter extends React.Component {
 }
 
 export default Counter;
+

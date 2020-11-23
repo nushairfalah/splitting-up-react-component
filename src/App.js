@@ -45,29 +45,70 @@ import "./App.css";
 
 // export default App;
 
+// import Counter from './Components/Counter'
+
+// class App extends React.Component {
+
+//   state = {
+//     showHide: false,
+//   }
+
+//   showHideClick = () => {
+//     this.setState({
+//       showHide: !this.state.showHide,
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <button onClick={this.showHideClick}>{this.state.showHide ? "Hide Counter" : "Show Counter"}</button>
+//         {this.state.showHide && <Counter />}
+//       </div>
+//     )
+//   }
+
+// }
+
+// export default App;
+
 import Counter from './Components/Counter'
 
-class App extends React.Component {
+// function App() {
+//   const [colorName, setColorName] = useState("")
 
+//   const colorHandler = (event) => {
+//     const colorName = event.target.value
+//     if (colorName.match("red")) {
+//       setColorName(colorName)
+//     }
+//   }
+
+//   return (
+//     <div className="App">
+//       <Counter color={(event) => colorHandler(event)} />
+//     </div>
+//   )
+// }
+
+class App extends React.Component {
   state = {
-    showHide: false,
+    backgroundColor: "white",
   }
 
-  showHideClick = () => {
+  colorChange = (event) => {
     this.setState({
-      showHide: !this.state.showHide,
+      backgroundColor: event.target.value
     })
   }
 
   render() {
     return (
-      <div className="App">
-        <button onClick={this.showHideClick}>{this.state.showHide ? "Hide Counter" : "Show Counter"}</button>
-        {this.state.showHide && <Counter />}
+      <div className="App" style={{ backgroundColor: this.state.backgroundColor, height: "100vh" }}>
+        <input type="text" onChange={this.colorChange} />
       </div>
     )
   }
-
 }
 
 export default App;
