@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <Route path="/profile" component={ProfilePage} />
+          <Route path="/profile/:name" component={ProfilePage} />
           <Route path="/home" component={HomePage} />
           <Route path="/counter" component={CounterPage} />
         </Router>
